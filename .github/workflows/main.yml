@@ -26,7 +26,7 @@ jobs:
       with:
         version: 12
     - name: GitHub Action for Yarn
-      uses: Borales/actions-yarn@v2.3.0
+      uses: Borales/actions-yarn@v2-beta
       with:
     # Yarn command
         cmd: install
@@ -37,12 +37,4 @@ jobs:
     - name: deploying on surge
       run: surge ./build http://bootcampapp-c2.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
        # Set always-auth in npmrc
-        always-auth: # optional, default is false
-      # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
-        node-version: # optional, default is 10.x
-      # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKEN
-        registry-url: # optional
-    # Optional scope for authenticating against scoped registries
-        scope: # optional
-    # Deprecated. Use node-version instead. Will not be supported after October 1, 2019
-        version: # optional
+      
